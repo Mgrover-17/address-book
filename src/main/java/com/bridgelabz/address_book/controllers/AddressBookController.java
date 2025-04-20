@@ -4,6 +4,7 @@ import com.bridgelabz.address_book.DTO.AddressBookDTO;
 import com.bridgelabz.address_book.DTO.ResponseDTO;
 import com.bridgelabz.address_book.models.AddressBook;
 import com.bridgelabz.address_book.services.IAddressBookService;
+import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -71,7 +72,7 @@ public class AddressBookController {
     }
 
     @PostMapping("/create")
-    public ResponseEntity<ResponseDTO>createAddressBook(@RequestBody AddressBookDTO addressBookDTO){
+    public ResponseEntity<ResponseDTO>createAddressBook(@Valid @RequestBody AddressBookDTO addressBookDTO){
 
         log.info("Inside createAddressBook");
         AddressBook book=addressBookService.createAddressBook(addressBookDTO);

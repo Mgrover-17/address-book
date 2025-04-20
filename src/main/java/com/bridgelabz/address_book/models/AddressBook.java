@@ -20,7 +20,7 @@ public class AddressBook {
     private String city;
     private String state;
     private String zip;
-    private long phoneNumber;
+    private String phoneNumber;
     private String country;
     private String email;
 
